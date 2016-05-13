@@ -1,0 +1,21 @@
+
+public class Encrypt {
+	private Word[] wordz;
+	
+	public Encrypt(Word[] word1){
+		wordz = word1;
+	}
+	public void shiftLeft(){
+		word
+		wordz[1] = 
+	}
+	public void shiftRight(){
+		
+	}
+	public void aThingy(){
+		
+	}
+	public void bThingy(){
+		
+	}
+}

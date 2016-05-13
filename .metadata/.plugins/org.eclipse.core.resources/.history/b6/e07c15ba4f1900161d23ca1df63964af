@@ -1,0 +1,10 @@
+
+public class Skipjack {
+	private Word[] word;
+	public Skipjack(){
+		
+	}
+	public static void main(String args[]){
+		
+	}
+}
