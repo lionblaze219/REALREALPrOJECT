@@ -1,4 +1,3 @@
-
 public class Decrypt implements skippy{
 	private Word[] wordz;
 	private int counter;
@@ -7,31 +6,29 @@ public class Decrypt implements skippy{
 		counter = 1;
 	}
 	public void shiftLeft(){
-		Word word = new Word();
-		word = wordz[4];
+		Word word = wordz[4];
 		for(int i = 4; i <= 1; i--){
 			wordz[i] = wordz[i-1];
 		}
 		wordz[0] = word;
 	}
 	public void shiftRight(){
-		Word word = new Word();
-		word = wordz[0];
-		for(int i = 1; i <= 4; i ++){
+		Word word = wordz[0];
+		for(int i = 1; i < 4; i ++){
 			wordz[i] = wordz[i-1];
 		}
-		wordz[4] = word;
+		wordz[3] = word;
 	}
 	public void aThingy(){
 		shiftRight();//check
-		wordz[4] = wordz[4] ^ wordz[1] ^ counter;
-		wordz[0] = wordz[0].invGPermutation();
+		wordz[3] = new Word(wordz[3].getWord() ^ wordz[1].getWord() ^ counter);
+		wordz[0] = new Word(wordz[0].invGPermutation(counter).getWord());
 		counter++;
 	}
 	public void bThingy(){
 		shiftRight();
-		wordz[0] = wordz[0].invGPermutation();
-		wordz[1] = wordz[0] ^ wordz[1] ^ counter;
+		wordz[0] = new Word(wordz[0].invGPermutation(counter).getWord());
+		wordz[1] = new Word(wordz[0].getWord() ^ wordz[1].getWord() ^ counter);
 		counter++;
 	}
 	public void decryptIt(){

@@ -1,3 +1,4 @@
+
 public class Encrypt implements skippy{
 	private Word[] wordz;
 	private int counter;
@@ -6,14 +7,15 @@ public class Encrypt implements skippy{
 		counter = 1;
 	}
 	public void shiftLeft(){
-		Word word = wordz[3];
+		Word word = new Word();
+		word = wordz[4];
 		for(int i = 4; i <= 1; i--){
 			wordz[i] = wordz[i-1];
 		}
 		wordz[0] = word;
 	}
 	public void shiftRight(){
-		Word word;
+		Word word = new Word();
 		word = wordz[0];
 		for(int i = 1; i <= 4; i ++){
 			wordz[i] = wordz[i-1];
@@ -23,14 +25,14 @@ public class Encrypt implements skippy{
 	}
 	public void aThingy(){
 		shiftLeft();//check
-		wordz[0] = new Word(wordz[1].gPermutation(counter).getWord() ^ wordz[0].getWord() ^ counter);
-		wordz[1] = new Word(wordz[1].gPermutation(counter).getWord());
+		wordz[0] = wordz[1].gPermutation() ^ wordz[0] ^ counter;
+		wordz[1] = wordz[1].gPermutation();
 		counter++;
 	}
 	public void bThingy(){
 		shiftLeft();
-		wordz[1] = new Word(wordz[1].gPermutation(counter).getWord());
-		wordz[2] = new Word (wordz[2].getWord() ^ wordz[1].getWord() ^ counter);
+		wordz[1] = wordz[1].gPermutation();
+		wordz[2] = wordz[2] ^ wordz[1] ^ counter;
 		counter++;
 	}
 	public void encryptIt(){
@@ -49,4 +51,3 @@ public class Encrypt implements skippy{
 		return wordz;
 	}
 }
-

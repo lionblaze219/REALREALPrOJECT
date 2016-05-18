@@ -11,6 +11,7 @@ public class Skipjack {
 		word[2] = new Word((byte)00000000, (byte)00000000);
 		word[3] = new Word((byte)00000000, (byte)00000000);
 		Encrypt encryption = new Encrypt(word);
+		
 		encryption.encryptIt();
 		encryption.getArray();
 		System.out.println(encryption.getArray());
